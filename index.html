@@ -205,6 +205,66 @@
       margin-top: 60px; 
       border-top: 1px solid rgba(77, 46, 31, 0.2); 
     }
+
+    /* --- STILI MENU HAMBURGER E RESPONSIVE MOBILE --- */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 28px;
+      height: 20px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 101;
+    }
+
+    .menu-toggle span {
+      width: 100%;
+      height: 3px;
+      background-color: var(--text-color);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    /* Regole attivate solo su schermi piccoli (sotto i 768px) */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex; /* Mostra le tre righette su Mobile */
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--bg-color);
+        border-bottom: 2px solid var(--border-color);
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+        box-shadow: 0 10px 15px rgba(20, 31, 51, 0.1);
+      }
+
+      .nav-links.active {
+        max-height: 250px; /* Apre il menù a scomparsa */
+      }
+
+      .nav-links li {
+        width: 100%;
+        text-align: center;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 15px 20px;
+        border-top: 1px solid rgba(77, 46, 31, 0.1);
+      }
+    }
   </style>
 </head>
 <body>
@@ -212,13 +272,22 @@
   <!-- Menu di Navigazione Principale -->
   <header>
     <nav>
-      <a href="index.html" class="logo">Renzo Losa</a>
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="catalogo.html">Catalogo</a></li>
-        <li><a href="chi-sono.html">Chi Sono</a></li>
-      </ul>
-    </nav>
+    <a href="index.html" class="logo">Renzo Losa</a>
+    
+    <!-- Pulsante Hamburger (visibile solo su Mobile) -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Apri menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Link del Menu -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="catalogo.html">Catalogo</a></li>
+      <li><a href="chi-sono.html">Chi Sono</a></li>
+    </ul>
+  </nav>
   </header>
 
   <main class="container">
@@ -273,5 +342,14 @@
     <p>&copy; Renzo Losa — Tutti i diritti riservati</p>
   </footer>
 
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+  
 </body>
 </html>
