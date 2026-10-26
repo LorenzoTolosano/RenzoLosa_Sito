@@ -1,1 +1,74 @@
-<h1>Pagina Chi Sono in arrivo</h1>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi Sono | Renzo Losa</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #2d3748; background-color: #f7fafc; }
+    
+    header { background-color: #ffffff; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 100; }
+    nav { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 18px 20px; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #1a202c; text-decoration: none; }
+    .nav-links { list-style: none; display: flex; gap: 24px; }
+    .nav-links a { text-decoration: none; color: #4a5568; font-weight: 500; }
+    .nav-links a:hover, .nav-links a.active { color: #3182ce; }
+
+    .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+    .card { background: #ffffff; padding: 35px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04); margin-bottom: 30px; }
+    h1, h2 { color: #1a202c; margin-bottom: 15px; }
+    p { color: #4a5568; margin-bottom: 15px; }
+
+    .faq-item { margin-top: 20px; border-top: 1px solid #edf2f7; padding-top: 15px; }
+    .faq-item h3 { font-size: 1.1rem; color: #2d3748; margin-bottom: 5px; }
+    
+    footer { text-align: center; padding: 30px 20px; font-size: 0.9rem; color: #a0aec0; margin-top: 60px; border-top: 1px solid #e2e8f0; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="index.html" class="logo">Renzo Losa</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="catalogo.html">Catalogo</a></li>
+        <li><a href="chi-sono.html" class="active">Chi Sono</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <h1>La mia Storia</h1>
+      <p>Benvenuto! Mi chiamo Renzo Losa e realizzo oggetti e creazioni personalizzate fatti a mano.</p>
+      <p>Ogni pezzo nasce dall'attenzione ai dettagli e dal desiderio di creare qualcosa di unico per chi lo riceve. Utilizzo materiali accuratamente selezionati per garantire un risultato durevole e di qualità.</p>
+    </div>
+
+    <div class="card">
+      <h2>Domande Frequenti (FAQ)</h2>
+      
+      <div class="faq-item">
+        <h3>Come funziona la richiesta d'ordine?</h3>
+        <p>Entra nella pagina del Catalogo, scegli l'articolo che ti interessa e clicca sul pulsante d'ordine. Compilando il modulo dedicato con le tue preferenze, mi invierai direttamente i dettagli della richiesta.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Come e quando si conferma l'ordine?</h3>
+        <p>Una volta inviata la richiesta, ti ricontatterò via email per confermare tutti i dettagli della personalizzazione e i tempi prima di procedere con la realizzazione.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Quali sono i tempi di consegna?</h3>
+        <p>I tempi variano in base alla complessità del pezzo scelto, solitamente tra i 3 e i 7 giorni lavorativi.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; Renzo Losa — Tutti i diritti riservati</p>
+  </footer>
+
+</body>
+</html>
