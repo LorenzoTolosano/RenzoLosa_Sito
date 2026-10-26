@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ordina Articolo A | Renzo Losa</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #2d3748; background-color: #f7fafc; }
+    
+    header { background-color: #ffffff; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 100; }
+    nav { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 18px 20px; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #1a202c; text-decoration: none; }
+    .nav-links { list-style: none; display: flex; gap: 24px; }
+    .nav-links a { text-decoration: none; color: #4a5568; font-weight: 500; }
+    .nav-links a:hover, .nav-links a.active { color: #3182ce; }
+
+    .container { max-width: 700px; margin: 40px auto; padding: 0 20px; }
+    .card { background: #ffffff; padding: 35px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04); margin-bottom: 30px; }
+    
+    h1 { font-size: 2rem; color: #1a202c; margin-bottom: 10px; }
+    p.subtitle { color: #718096; margin-bottom: 25px; }
+
+    /* Stili Form Nativo */
+    .form-group { margin-bottom: 20px; }
+    label { display: block; font-weight: 600; color: #2d3748; margin-bottom: 8px; font-size: 0.95rem; }
+    input[type="text"], input[type="email"], input[type="tel"], select, textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #cbd5e0;
+      border-radius: 8px;
+      font-size: 1rem;
+      color: #2d3748;
+      background-color: #fff;
+      transition: border-color 0.2s;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #3182ce;
+      box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.15);
+    }
+    .help-text { font-size: 0.85rem; color: #718096; margin-top: 4px; }
+    
+    .btn-submit {
+      width: 100%;
+      background-color: #3182ce;
+      color: #ffffff;
+      border: none;
+      padding: 14px;
+      border-radius: 8px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    .btn-submit:hover { background-color: #2b6cb0; }
+
+    footer { text-align: center; padding: 30px 20px; font-size: 0.9rem; color: #a0aec0; margin-top: 60px; border-top: 1px solid #e2e8f0; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="index.html" class="logo">Renzo Losa</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="catalogo.html">Catalogo</a></li>
+        <li><a href="chi-sono.html">Chi Sono</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <h1>Configura: Articolo Tipologia A</h1>
+      <p class="subtitle">Seleziona le personalizzazioni e compila i tuoi dati per inviarmi la richiesta.</p>
+
+      <!-- Form Nativo collegato a Web3Forms -->
+      <form action="https://api.web3forms.com/submit" method="POST">
+        
+        <!-- Sostituisci YOUR_ACCESS_KEY_HERE con la tua chiave Web3Forms -->
+        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+        <input type="hidden" name="subject" value="Nuova richiesta d'ordine: Articolo Tipologia A">
+        <input type="hidden" name="from_name" value="Sito Renzo Losa">
+
+        <!-- Opzioni Specifiche dell'Articolo A -->
+        <div class="form-group">
+          <label for="variante">Scegli la variante / finitura:</label>
+          <select id="variante" name="Variante Selezionata" required>
+            <option value="">-- Seleziona un'opzione --</option>
+            <option value="Legno Naturale">Legno Naturale</option>
+            <option value="Finitura Scura">Finitura Scura</option>
+            <option value="Verniciato Bianco">Verniciato Bianco</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="personalizzazione">Testo o dedica personalizzata (opzionale):</label>
+          <input type="text" id="personalizzazione" name="Testo Personalizzato" placeholder="Es. Nome, data o frase da incidere">
+          <p class="help-text">Lascia vuoto se non desideri personalizzazioni di testo.</p>
+        </div>
+
+        <div class="form-group">
+          <label for="note">Note aggiuntive:</label>
+          <textarea id="note" name="Note Cliente" rows="3" placeholder="Scrivi qui eventuali richieste specifiche..."></textarea>
+        </div>
+
+        <hr style="border: none; border-top: 1px solid #edf2f7; margin: 25px 0;">
+
+        <!-- Dati Cliente -->
+        <div class="form-group">
+          <label for="nome">Nome e Cognome:</label>
+          <input type="text" id="nome" name="Nome Cliente" required placeholder="Mario Rossi">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Indirizzo Email:</label>
+          <input type="email" id="email" name="Email Cliente" required placeholder="mario.rossi@esempio.com">
+        </div>
+
+        <div class="form-group">
+          <label for="telefono">Numero di Telefono (opzionale):</label>
+          <input type="tel" id="telefono" name="Telefono Cliente" placeholder="333 1234567">
+        </div>
+
+        <button type="submit" class="btn-submit">Invia Richiesta d'Ordine</button>
+
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; Renzo Losa — Tutti i diritti riservati</p>
+  </footer>
+
+</body>
+</html>
