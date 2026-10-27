@@ -562,15 +562,36 @@
       setSlide(idx);
     });
 
-    // --- LOGICA MODAL / POPUP CONFIGURATORE ---
+    // --- LOGICA MODAL / POPUP CONFIGURATORE (AGGIORNATA CON EVIDENZIATORE DINAMICO) ---
     const finishModal = document.getElementById('finishModal');
     const sizeModal = document.getElementById('sizeModal');
 
-    document.getElementById('openFinishModal').addEventListener('click', () => finishModal.classList.add('open'));
-    document.getElementById('openSizeModal').addEventListener('click', () => sizeModal.classList.add('open'));
+    // APERTURA MODAL E EVIDENZIAZIONE SCELTA ATTIVATA
+    document.getElementById('openFinishModal').addEventListener('click', () => {
+      highlightCurrentOption('finishModal', selectedFinish.title);
+      finishModal.classList.add('open');
+    });
+
+    document.getElementById('openSizeModal').addEventListener('click', () => {
+      highlightCurrentOption('sizeModal', selectedSize.title);
+      sizeModal.classList.add('open');
+    });
 
     function closeModal(modalId) {
       document.getElementById(modalId).classList.remove('open');
+    }
+
+    // Funzione che aggiorna la classe .selected sul popup in base alla scelta corrente
+    function highlightCurrentOption(modalId, activeTitle) {
+      const options = document.querySelectorAll(`#${modalId} .option-item`);
+      options.forEach(opt => {
+        const title = opt.querySelector('.option-title').innerText.trim();
+        if (title === activeTitle) {
+          opt.classList.add('selected');
+        } else {
+          opt.classList.remove('selected');
+        }
+      });
     }
 
     // STATE DEL PRODOTTO
