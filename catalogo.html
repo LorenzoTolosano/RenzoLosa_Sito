@@ -10,7 +10,7 @@
   <style>
     :root {
       /* Palette Ufficiale Renzo Losa */
-      --bg-color: #F2E2C2;        /* Avorio */
+      --bg-color: #F2E6CE;        /* Avorio */
       --text-color: #141F33;      /* Blu Navy */
       --border-color: #4D2E1F;    /* Marrone Scuro */
       --secondary-color: #E6A82E; /* Ocra */
@@ -265,6 +265,35 @@
         border-top: 1px solid rgba(77, 46, 31, 0.1);
       }
     }
+
+    /* Badge Carrello nella Navbar */
+    .cart-link {
+      position: relative;
+      background: var(--border-color);
+      color: #fff !important;
+      padding: 8px 16px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+    
+    .cart-count {
+      background: var(--accent-color);
+      color: #fff;
+      font-size: 0.8rem;
+      padding: 2px 7px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+    
+    /* Stile Logo Header */
+    .logo img {
+      height: 38px;
+      width: auto;
+      display: block;
+    }
     
   </style>
 </head>
@@ -272,22 +301,25 @@
 
   <header>
     <nav>
-    <a href="index.html" class="logo">Renzo Losa</a>
-    
-    <!-- Pulsante Hamburger (visibile solo su Mobile) -->
-    <button class="menu-toggle" id="menuToggle" aria-label="Apri menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <!-- Link del Menu -->
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="catalogo.html">Catalogo</a></li>
-      <li><a href="chi-sono.html">Chi Sono</a></li>
-    </ul>
-  </nav>
+      <a href="index.html" class="logo">
+        <img src="Logotipo_Blu.svg" alt="Renzo Losa" style="height: 38px; width: auto; display: block;">
+      </a>
+      
+      <button class="menu-toggle" id="menuToggle" aria-label="Apri menu">
+        <span></span><span></span><span></span>
+      </button>
+  
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="catalogo.html">Catalogo</a></li>
+        <li><a href="chi-sono.html">Chi Sono</a></li>
+        <li>
+          <a href="carrello.html" class="cart-link">
+            🛒 Carrello <span class="cart-count" id="cartCount">0</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
   </header>
 
   <main class="container">
@@ -330,13 +362,27 @@
   </footer>
 
   <script>
+    // Toggle Menu Mobile
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
+    if (menuToggle) {
+      menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+    }
 
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
+    // Aggiorna Conteggio Carrello nella Navbar
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem('renzoLosaCart')) || [];
+      const cartCountEl = document.getElementById('cartCount');
+      if (cartCountEl) {
+        cartCountEl.innerText = cart.length;
+      }
+    }
+
+    updateCartCount();
   </script>
+  
+</body>
+</html>
   
 </body>
 </html>
