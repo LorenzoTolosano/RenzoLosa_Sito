@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bracciale in Cuoio Artisanal | Renzo Losa</title>
+  <title>Bracciale in Cuoio | Renzo Losa</title>
   
   <!-- Adobe Fonts (Arboria) -->
   <link rel="stylesheet" href="https://use.typekit.net/cgj4pdi.css">
@@ -11,7 +11,7 @@
   <style>
     :root {
       /* Palette Ufficiale Renzo Losa */
-      --bg-color: #F2E2C2;        /* Avorio */
+      --bg-color: #F2E6CE;        /* Avorio */
       --text-color: #141F33;      /* Blu Navy */
       --border-color: #4D2E1F;    /* Marrone Scuro */
       --secondary-color: #E6A82E; /* Ocra */
@@ -224,17 +224,6 @@
     .config-card-text { font-weight: 600; }
     .config-card-text small { display: block; font-weight: normal; opacity: 0.75; font-size: 0.85rem; }
     .config-card-action { font-size: 0.85rem; color: var(--accent-color); font-weight: bold; }
-
-    /* INCISIONE TESTO OPTIONAL */
-    .engraving-group { margin-bottom: 25px; }
-    .engraving-group label { display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.95rem; }
-    .engraving-group input {
-      width: 100%;
-      padding: 10px 12px;
-      border: 1px solid rgba(77, 46, 31, 0.25);
-      border-radius: 8px;
-      font-size: 0.95rem;
-    }
 
     /* PREZZO E AGGIUNGI AL CARRELLO */
     .action-box {
@@ -471,12 +460,6 @@
             </div>
           </div>
           <span class="config-card-action">Cambia &rsaquo;</span>
-        </div>
-
-        <!-- INCISIONE TESTO -->
-        <div class="engraving-group">
-          <span class="config-label">4. Incisione / Iniziali (Opzionale +5€):</span>
-          <input type="text" id="engravingText" placeholder="Es. N.L. oppure 12.05.24" oninput="updatePrice()">
         </div>
 
         <!-- PREZZO E TASTO AGGIUNGI -->
@@ -722,8 +705,7 @@
     }
 
     function updatePrice() {
-      let engravingPrice = document.getElementById('engravingText').value.trim() !== '' ? 5 : 0;
-      let total = basePrice + selectedColor.extraPrice + selectedHeight.extraPrice + selectedSize.extraPrice + engravingPrice;
+      let total = basePrice + selectedColor.extraPrice + selectedHeight.extraPrice + selectedSize.extraPrice;
       document.getElementById('totalPrice').innerText = total + " €";
       return total;
     }
@@ -735,14 +717,12 @@
     }
 
     function addToCart() {
-      let engraving = document.getElementById('engravingText').value.trim();
       let cartItem = {
         id: Date.now(),
         name: "Bracciale in Cuoio Artisanal",
         color: selectedColor.title,
         height: selectedHeight.title,
         size: selectedSize.title,
-        engraving: engraving !== '' ? engraving : "Nessuna",
         price: updatePrice()
       };
 
