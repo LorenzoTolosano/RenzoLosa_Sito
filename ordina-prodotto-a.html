@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Articolo Tipologia A | Renzo Losa</title>
+  <title>Bracciale in Cuoio Artisanal | Renzo Losa</title>
   
   <!-- Adobe Fonts (Arboria) -->
   <link rel="stylesheet" href="https://use.typekit.net/cgj4pdi.css">
@@ -11,7 +11,7 @@
   <style>
     :root {
       /* Palette Ufficiale Renzo Losa */
-      --bg-color: #F2E6CE;        /* Avorio */
+      --bg-color: #F2E2C2;        /* Avorio */
       --text-color: #141F33;      /* Blu Navy */
       --border-color: #4D2E1F;    /* Marrone Scuro */
       --secondary-color: #E6A82E; /* Ocra */
@@ -52,7 +52,6 @@
     .nav-links a { text-decoration: none; color: var(--text-color); font-weight: 600; }
     .nav-links a:hover, .nav-links a.active { color: var(--accent-color); }
 
-    /* Badge Carrello nel Menu */
     .cart-link {
       position: relative;
       background: var(--border-color);
@@ -106,12 +105,11 @@
     /* Container Principale */
     .container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
 
-    /* Titolo Prodotto in Cima */
     .product-header { margin-bottom: 25px; text-align: left; }
     .product-header h1 { font-size: 2.4rem; color: var(--text-color); line-height: 1.2; }
     .product-header .subtitle { font-size: 1.1rem; opacity: 0.8; margin-top: 5px; }
 
-    /* Layout Principale: Carosello + Configurator */
+    /* Layout Principale */
     .product-main-grid {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
@@ -197,7 +195,7 @@
 
     .config-label {
       font-weight: bold;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       display: block;
       font-size: 0.95rem;
       text-transform: uppercase;
@@ -214,7 +212,7 @@
       align-items: center;
       justify-content: space-between;
       cursor: pointer;
-      margin-bottom: 15px;
+      margin-bottom: 18px;
       transition: border-color 0.2s, background-color 0.2s;
     }
     .config-card:hover {
@@ -227,7 +225,7 @@
     .config-card-text small { display: block; font-weight: normal; opacity: 0.75; font-size: 0.85rem; }
     .config-card-action { font-size: 0.85rem; color: var(--accent-color); font-weight: bold; }
 
-    /* INPUT INCISIONE TESTO */
+    /* INCISIONE TESTO OPTIONAL */
     .engraving-group { margin-bottom: 25px; }
     .engraving-group label { display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.95rem; }
     .engraving-group input {
@@ -238,7 +236,7 @@
       font-size: 0.95rem;
     }
 
-    /* SEZIONE PREZZO E AGGIUNGI AL CARRELLO */
+    /* PREZZO E AGGIUNGI AL CARRELLO */
     .action-box {
       margin-top: 25px;
       padding-top: 20px;
@@ -269,7 +267,7 @@
     }
     .btn-add-cart:hover { background-color: var(--accent-hover); }
 
-    /* APPROFONDIMENTO E STORIA PRODOTTO */
+    /* APPROFONDIMENTO E TABELLA TAGLIE */
     .story-section {
       background: var(--card-bg);
       padding: 40px 35px;
@@ -280,6 +278,21 @@
     }
     .story-section h2 { font-size: 1.8rem; margin-bottom: 15px; border-bottom: 2px solid var(--secondary-color); display: inline-block; padding-bottom: 5px; }
     .story-section p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 15px; }
+
+    .size-guide-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    .size-guide-table th, .size-guide-table td {
+      border: 1px solid rgba(77, 46, 31, 0.2);
+      padding: 10px 14px;
+      text-align: center;
+    }
+    .size-guide-table th {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
 
     /* POPUP / MODAL OPZIONI CONFIGURATORE */
     .modal-overlay {
@@ -324,7 +337,7 @@
 
     .option-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
       gap: 15px;
     }
     .option-item {
@@ -341,7 +354,7 @@
     }
     .option-item img {
       width: 100%;
-      height: 90px;
+      height: 85px;
       object-fit: cover;
       border-radius: 6px;
       margin-bottom: 8px;
@@ -365,7 +378,7 @@
   <header>
     <nav>
       <a href="index.html" class="logo">
-        <img src="Logotipo_Blu.svg" alt="Renzo Losa" style="height: 38px; width: auto; display: block;">
+        <img src="Logotipo_Blu.svg" alt="Renzo Losa">
       </a>
       
       <button class="menu-toggle" id="menuToggle" aria-label="Apri menu">
@@ -389,76 +402,88 @@
 
     <!-- TITOLO PRODOTTO IN CIMA -->
     <div class="product-header">
-      <h1>Articolo Tipologia A</h1>
-      <p class="subtitle">Creazione artigianale realizzata a mano in legno nobile</p>
+      <h1>Bracciale in Cuoio Artisanal</h1>
+      <p class="subtitle">Cuoio a concia vegetale lavorato a mano e rifinito su misura</p>
     </div>
 
-    <!-- GRIGLIA PRINCIPALE: CAROSELLO + CONFIGURATORE -->
+    <!-- GRIGLIA PRINCIPALE -->
     <div class="product-main-grid">
 
-      <!-- COLONNA SINISTRA: CAROSELLO FOTO -->
+      <!-- CAROSELLO FOTO -->
       <div class="carousel-container">
         <div class="carousel-view">
-          <img src="prodotto-a-1.jpg" alt="Vista principale" class="carousel-slide active">
-          <img src="prodotto-a-2.jpg" alt="Dettaglio lavorazione" class="carousel-slide">
-          <img src="prodotto-a-3.jpg" alt="Particolare incisione" class="carousel-slide">
+          <img src="bracciale-oliva.jpg" alt="Bracciale Cuoio Oliva" class="carousel-slide active">
+          <img src="bracciale-marrone.jpg" alt="Bracciale Cuoio Marrone Scuro" class="carousel-slide">
+          <img src="bracciale-cognac.jpg" alt="Bracciale Cuoio Cognac" class="carousel-slide">
           
           <button class="carousel-btn prev" id="prevBtn">&#10094;</button>
           <button class="carousel-btn next" id="nextBtn">&#10095;</button>
         </div>
 
-        <!-- Miniature -->
         <div class="carousel-thumbs">
-          <img src="prodotto-a-1.jpg" class="thumb active" onclick="setSlide(0)">
-          <img src="prodotto-a-2.jpg" class="thumb" onclick="setSlide(1)">
-          <img src="prodotto-a-3.jpg" class="thumb" onclick="setSlide(2)">
+          <img src="bracciale-oliva.jpg" class="thumb active" onclick="setSlide(0)">
+          <img src="bracciale-marrone.jpg" class="thumb" onclick="setSlide(1)">
+          <img src="bracciale-cognac.jpg" class="thumb" onclick="setSlide(2)">
         </div>
       </div>
 
-      <!-- COLONNA DESTRAM: DESCRIZIONE BREVE + CONFIGURATORE -->
+      <!-- PANEL CONFIGURATORE -->
       <div class="product-config-panel">
         
         <p class="short-desc">
-          Un oggetto dal design essenziale e materico, perfetto come pezzo d'arredo o regalo personalizzato. Ogni esemplare viene rifinito a mano nel mio laboratorio.
+          Realizzato in pregiato cuoio toscano tagliato e rifinito a mano. Un accessorio senza tempo, personalizzabile in colore, larghezza e taglia esatta.
         </p>
 
-        <!-- CONFIGURATORE CARD 1: FINITURA / VARIANTE -->
-        <span class="config-label">1. Scegli la Finitura:</span>
-        <div class="config-card" id="openFinishModal">
+        <!-- CARD 1: COLORE -->
+        <span class="config-label">1. Colore del Cuoio:</span>
+        <div class="config-card" id="openColorModal">
           <div class="config-card-info">
-            <img src="finitura-naturale.jpg" id="selectedFinishImg" class="config-card-img" alt="Finitura">
+            <img src="colore-oliva.jpg" id="selectedColorImg" class="config-card-img" alt="Oliva">
             <div class="config-card-text">
-              <span id="selectedFinishTitle">Legno Naturale</span>
-              <small id="selectedFinishSub">Incluso nel prezzo base</small>
+              <span id="selectedColorTitle">Oliva</span>
+              <small id="selectedColorSub">Tonalità opaca ed elegante</small>
             </div>
           </div>
           <span class="config-card-action">Cambia &rsaquo;</span>
         </div>
 
-        <!-- CONFIGURATORE CARD 2: DIMENSIONE / MODELLO -->
-        <span class="config-label">2. Dimensione:</span>
+        <!-- CARD 2: ALTEZZA -->
+        <span class="config-label">2. Altezza del Bracciale:</span>
+        <div class="config-card" id="openHeightModal">
+          <div class="config-card-info">
+            <img src="altezza-2cm.jpg" id="selectedHeightImg" class="config-card-img" alt="2 cm">
+            <div class="config-card-text">
+              <span id="selectedHeightTitle">2 cm</span>
+              <small id="selectedHeightSub">Misura standard</small>
+            </div>
+          </div>
+          <span class="config-card-action">Cambia &rsaquo;</span>
+        </div>
+
+        <!-- CARD 3: TAGLIA -->
+        <span class="config-label">3. Taglia (Circonferenza Polso):</span>
         <div class="config-card" id="openSizeModal">
           <div class="config-card-info">
-            <img src="dimensione-standard.jpg" id="selectedSizeImg" class="config-card-img" alt="Dimensione">
+            <img src="guida-taglie.jpg" id="selectedSizeImg" class="config-card-img" alt="Taglia">
             <div class="config-card-text">
-              <span id="selectedSizeTitle">Standard (20x15 cm)</span>
-              <small id="selectedSizeSub">Misura classica</small>
+              <span id="selectedSizeTitle">M - 16,5 cm</span>
+              <small id="selectedSizeSub">Polso medio</small>
             </div>
           </div>
           <span class="config-card-action">Cambia &rsaquo;</span>
         </div>
 
-        <!-- INCISIONE TESTO OPTIONAL -->
+        <!-- INCISIONE TESTO -->
         <div class="engraving-group">
-          <span class="config-label">3. Incisione Personalizzata (Opzionale +10€):</span>
-          <input type="text" id="engravingText" placeholder="Es. Nome, data o iniziali da incidere..." oninput="updatePrice()">
+          <span class="config-label">4. Incisione / Iniziali (Opzionale +5€):</span>
+          <input type="text" id="engravingText" placeholder="Es. N.L. oppure 12.05.24" oninput="updatePrice()">
         </div>
 
-        <!-- PREZZO E TASTO AGGIUNGI AL CARRELLO -->
+        <!-- PREZZO E TASTO AGGIUNGI -->
         <div class="action-box">
           <div class="price-display">
             <span class="price-label">Prezzo Totale:</span>
-            <span class="price-value" id="totalPrice">120 €</span>
+            <span class="price-value" id="totalPrice">35 €</span>
           </div>
 
           <button class="btn-add-cart" onclick="addToCart()">Aggiungi al Carrello 🛒</button>
@@ -468,63 +493,128 @@
 
     </div>
 
-    <!-- SEZIONE BASSAM: STORIA E DETTAGLI DEL PRODOTTO -->
+    <!-- SEZIONE BASSAM: GUIDA ALLE TAGLIE E STORIA -->
     <section class="story-section">
-      <h2>La Storia e la Lavorazione</h2>
+      <h2>Guida alle Misure & Lavorazione</h2>
       <p>
-        Ogni Articolo Tipologia A parte da una tavola grezza selezionata personalmente per le sue venature e peculiarità. La sagomatura e la levigatura manuale richiedono diverse ore di laboratorio, garantendo che nessun pezzo sia identico a un altro.
+        Per conoscere la tua taglia ideale, misura la circonferenza del polso con un metro da sarta facendolo aderire senza stringere troppo. Se sei a cavallo tra due misure, ti consigliamo la taglia superiore.
       </p>
-      <p>
-        La protezione finale viene applicata utilizzando oli e cere naturali, per lasciare intatto il calore e la texture del legno mantenendo la superficie protetta nel tempo.
-      </p>
+
+      <table class="size-guide-table">
+        <thead>
+          <tr>
+            <th>Taglia</th>
+            <th>Circonferenza Polso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>XXS</strong></td><td>12,5 cm</td></tr>
+          <tr><td><strong>XS</strong></td><td>13,5 cm</td></tr>
+          <tr><td><strong>S</strong></td><td>15,0 cm</td></tr>
+          <tr><td><strong>M</strong></td><td>16,5 cm</td></tr>
+          <tr><td><strong>L</strong></td><td>18,0 cm</td></tr>
+          <tr><td><strong>XL</strong></td><td>19,5 cm</td></tr>
+          <tr><td><strong>XXL</strong></td><td>21,0 cm</td></tr>
+        </tbody>
+      </table>
     </section>
 
   </main>
 
-  <!-- POPUP / MODAL SELEZIONE FINITURA -->
-  <div class="modal-overlay" id="finishModal">
+  <!-- POPUP COLORE -->
+  <div class="modal-overlay" id="colorModal">
     <div class="modal-content">
       <div class="modal-header">
-        <h3>Seleziona la Finitura</h3>
-        <button class="modal-close" onclick="closeModal('finishModal')">&times;</button>
+        <h3>Seleziona il Colore</h3>
+        <button class="modal-close" onclick="closeModal('colorModal')">&times;</button>
       </div>
       <div class="option-grid">
-        <div class="option-item selected" onclick="selectFinish('Legno Naturale', 0, 'finitura-naturale.jpg', 'Incluso')">
-          <img src="finitura-naturale.jpg" alt="Naturale">
-          <span class="option-title">Legno Naturale</span>
-          <span class="option-price">Incluso</span>
+        <div class="option-item" onclick="selectColor('Oliva', 0, 'colore-oliva.jpg', 'Tonalità opaca ed elegante')">
+          <img src="colore-oliva.jpg" alt="Oliva">
+          <span class="option-title">Oliva</span>
+          <span class="option-price">Base</span>
         </div>
-        <div class="option-item" onclick="selectFinish('Finitura Scura', 15, 'finitura-scura.jpg', '+15 €')">
-          <img src="finitura-scura.jpg" alt="Scura">
-          <span class="option-title">Finitura Scura</span>
-          <span class="option-price">+15 €</span>
+        <div class="option-item" onclick="selectColor('Marrone Scuro', 0, 'colore-marrone.jpg', 'Classico cuoio intenso')">
+          <img src="colore-marrone.jpg" alt="Marrone Scuro">
+          <span class="option-title">Marrone Scuro</span>
+          <span class="option-price">Base</span>
         </div>
-        <div class="option-item" onclick="selectFinish('Verniciato Bianco', 20, 'finitura-bianco.jpg', '+20 €')">
-          <img src="finitura-bianco.jpg" alt="Bianco">
-          <span class="option-title">Verniciato Bianco</span>
-          <span class="option-price">+20 €</span>
+        <div class="option-item" onclick="selectColor('Cognac', 0, 'colore-cognac.jpg', 'Tono caldo e dorato')">
+          <img src="colore-cognac.jpg" alt="Cognac">
+          <span class="option-title">Cognac</span>
+          <span class="option-price">Base</span>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- POPUP / MODAL SELEZIONE DIMENSIONE -->
+  <!-- POPUP ALTEZZA -->
+  <div class="modal-overlay" id="heightModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Seleziona l'Altezza</h3>
+        <button class="modal-close" onclick="closeModal('heightModal')">&times;</button>
+      </div>
+      <div class="option-grid">
+        <div class="option-item" onclick="selectHeight('2 cm', 0, 'altezza-2cm.jpg', 'Misura standard')">
+          <img src="altezza-2cm.jpg" alt="2 cm">
+          <span class="option-title">2 cm</span>
+          <span class="option-price">Base</span>
+        </div>
+        <div class="option-item" onclick="selectHeight('2,5 cm', 2, 'altezza-25cm.jpg', '+2 €')">
+          <img src="altezza-25cm.jpg" alt="2,5 cm">
+          <span class="option-title">2,5 cm</span>
+          <span class="option-price">+2 €</span>
+        </div>
+        <div class="option-item" onclick="selectHeight('3 cm', 4, 'altezza-3cm.jpg', '+4 €')">
+          <img src="altezza-3cm.jpg" alt="3 cm">
+          <span class="option-title">3 cm</span>
+          <span class="option-price">+4 €</span>
+        </div>
+        <div class="option-item" onclick="selectHeight('3,5 cm', 6, 'altezza-35cm.jpg', '+6 €')">
+          <img src="altezza-35cm.jpg" alt="3,5 cm">
+          <span class="option-title">3,5 cm</span>
+          <span class="option-price">+6 €</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- POPUP TAGLIA -->
   <div class="modal-overlay" id="sizeModal">
     <div class="modal-content">
       <div class="modal-header">
-        <h3>Seleziona la Dimensione</h3>
+        <h3>Seleziona la Taglia</h3>
         <button class="modal-close" onclick="closeModal('sizeModal')">&times;</button>
       </div>
       <div class="option-grid">
-        <div class="option-item selected" onclick="selectSize('Standard (20x15 cm)', 0, 'dimensione-standard.jpg', 'Misura classica')">
-          <img src="dimensione-standard.jpg" alt="Standard">
-          <span class="option-title">Standard (20x15 cm)</span>
-          <span class="option-price">Base</span>
+        <div class="option-item" onclick="selectSize('XXS - 12,5 cm', 0, 'guida-taglie.jpg', 'Polso molto sottile')">
+          <span class="option-title">XXS</span>
+          <small>12,5 cm</small>
         </div>
-        <div class="option-item" onclick="selectSize('Grande (30x20 cm)', 25, 'dimensione-grande.jpg', '+25 €')">
-          <img src="dimensione-grande.jpg" alt="Grande">
-          <span class="option-title">Grande (30x20 cm)</span>
-          <span class="option-price">+25 €</span>
+        <div class="option-item" onclick="selectSize('XS - 13,5 cm', 0, 'guida-taglie.jpg', 'Polso sottile')">
+          <span class="option-title">XS</span>
+          <small>13,5 cm</small>
+        </div>
+        <div class="option-item" onclick="selectSize('S - 15 cm', 0, 'guida-taglie.jpg', 'Polso piccolo')">
+          <span class="option-title">S</span>
+          <small>15,0 cm</small>
+        </div>
+        <div class="option-item" onclick="selectSize('M - 16,5 cm', 0, 'guida-taglie.jpg', 'Polso medio')">
+          <span class="option-title">M</span>
+          <small>16,5 cm</small>
+        </div>
+        <div class="option-item" onclick="selectSize('L - 18 cm', 0, 'guida-taglie.jpg', 'Polso grande')">
+          <span class="option-title">L</span>
+          <small>18,0 cm</small>
+        </div>
+        <div class="option-item" onclick="selectSize('XL - 19,5 cm', 0, 'guida-taglie.jpg', 'Polso XL')">
+          <span class="option-title">XL</span>
+          <small>19,5 cm</small>
+        </div>
+        <div class="option-item" onclick="selectSize('XXL - 21 cm', 0, 'guida-taglie.jpg', 'Polso XXL')">
+          <span class="option-title">XXL</span>
+          <small>21,0 cm</small>
         </div>
       </div>
     </div>
@@ -562,16 +652,19 @@
       setSlide(idx);
     });
 
-    // --- LOGICA MODAL / POPUP CONFIGURATORE (AGGIORNATA CON EVIDENZIATORE DINAMICO) ---
-    const finishModal = document.getElementById('finishModal');
+    // --- LOGICA POPUP E CONFIGURAZIONE ---
+    const colorModal = document.getElementById('colorModal');
+    const heightModal = document.getElementById('heightModal');
     const sizeModal = document.getElementById('sizeModal');
 
-    // APERTURA MODAL E EVIDENZIAZIONE SCELTA ATTIVATA
-    document.getElementById('openFinishModal').addEventListener('click', () => {
-      highlightCurrentOption('finishModal', selectedFinish.title);
-      finishModal.classList.add('open');
+    document.getElementById('openColorModal').addEventListener('click', () => {
+      highlightCurrentOption('colorModal', selectedColor.title);
+      colorModal.classList.add('open');
     });
-
+    document.getElementById('openHeightModal').addEventListener('click', () => {
+      highlightCurrentOption('heightModal', selectedHeight.title);
+      heightModal.classList.add('open');
+    });
     document.getElementById('openSizeModal').addEventListener('click', () => {
       highlightCurrentOption('sizeModal', selectedSize.title);
       sizeModal.classList.add('open');
@@ -581,30 +674,42 @@
       document.getElementById(modalId).classList.remove('open');
     }
 
-    // Funzione che aggiorna la classe .selected sul popup in base alla scelta corrente
     function highlightCurrentOption(modalId, activeTitle) {
       const options = document.querySelectorAll(`#${modalId} .option-item`);
       options.forEach(opt => {
-        const title = opt.querySelector('.option-title').innerText.trim();
-        if (title === activeTitle) {
-          opt.classList.add('selected');
-        } else {
-          opt.classList.remove('selected');
+        const titleNode = opt.querySelector('.option-title');
+        if (titleNode) {
+          const title = titleNode.innerText.trim();
+          if (title === activeTitle.split(' - ')[0]) {
+            opt.classList.add('selected');
+          } else {
+            opt.classList.remove('selected');
+          }
         }
       });
     }
 
-    // STATE DEL PRODOTTO
-    const basePrice = 120;
-    let selectedFinish = { title: 'Legno Naturale', extraPrice: 0, img: 'finitura-naturale.jpg' };
-    let selectedSize = { title: 'Standard (20x15 cm)', extraPrice: 0, img: 'dimensione-standard.jpg' };
+    // BASE DI PREZZO & SELEZIONI CORRENTI
+    const basePrice = 35;
+    let selectedColor = { title: 'Oliva', extraPrice: 0, img: 'colore-oliva.jpg' };
+    let selectedHeight = { title: '2 cm', extraPrice: 0, img: 'altezza-2cm.jpg' };
+    let selectedSize = { title: 'M - 16,5 cm', extraPrice: 0, img: 'guida-taglie.jpg' };
 
-    function selectFinish(title, extra, img, subText) {
-      selectedFinish = { title, extraPrice: extra, img };
-      document.getElementById('selectedFinishTitle').innerText = title;
-      document.getElementById('selectedFinishSub').innerText = subText;
-      document.getElementById('selectedFinishImg').src = img;
-      closeModal('finishModal');
+    function selectColor(title, extra, img, subText) {
+      selectedColor = { title, extraPrice: extra, img };
+      document.getElementById('selectedColorTitle').innerText = title;
+      document.getElementById('selectedColorSub').innerText = subText;
+      document.getElementById('selectedColorImg').src = img;
+      closeModal('colorModal');
+      updatePrice();
+    }
+
+    function selectHeight(title, extra, img, subText) {
+      selectedHeight = { title, extraPrice: extra, img };
+      document.getElementById('selectedHeightTitle').innerText = title;
+      document.getElementById('selectedHeightSub').innerText = subText;
+      document.getElementById('selectedHeightImg').src = img;
+      closeModal('heightModal');
       updatePrice();
     }
 
@@ -612,19 +717,18 @@
       selectedSize = { title, extraPrice: extra, img };
       document.getElementById('selectedSizeTitle').innerText = title;
       document.getElementById('selectedSizeSub').innerText = subText;
-      document.getElementById('selectedSizeImg').src = img;
       closeModal('sizeModal');
       updatePrice();
     }
 
     function updatePrice() {
-      let engravingPrice = document.getElementById('engravingText').value.trim() !== '' ? 10 : 0;
-      let total = basePrice + selectedFinish.extraPrice + selectedSize.extraPrice + engravingPrice;
+      let engravingPrice = document.getElementById('engravingText').value.trim() !== '' ? 5 : 0;
+      let total = basePrice + selectedColor.extraPrice + selectedHeight.extraPrice + selectedSize.extraPrice + engravingPrice;
       document.getElementById('totalPrice').innerText = total + " €";
       return total;
     }
 
-    // --- LOGICA CARRELLO (LOCALSTORAGE) ---
+    // --- LOGICA CARRELLO ---
     function updateCartCount() {
       let cart = JSON.parse(localStorage.getItem('renzoLosaCart')) || [];
       document.getElementById('cartCount').innerText = cart.length;
@@ -634,8 +738,9 @@
       let engraving = document.getElementById('engravingText').value.trim();
       let cartItem = {
         id: Date.now(),
-        name: "Articolo Tipologia A",
-        finish: selectedFinish.title,
+        name: "Bracciale in Cuoio Artisanal",
+        color: selectedColor.title,
+        height: selectedHeight.title,
         size: selectedSize.title,
         engraving: engraving !== '' ? engraving : "Nessuna",
         price: updatePrice()
@@ -646,10 +751,9 @@
       localStorage.setItem('renzoLosaCart', JSON.stringify(cart));
       
       updateCartCount();
-      alert("Prodotto aggiunto al carrello!");
+      alert("Bracciale aggiunto al carrello!");
     }
 
-    // Inizializza il conteggio al caricamento
     updateCartCount();
   </script>
 </body>
