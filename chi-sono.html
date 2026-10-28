@@ -38,6 +38,7 @@
       top: 0; 
       z-index: 100; 
     }
+
     nav { 
       max-width: 1000px; 
       margin: 0 auto; 
@@ -46,6 +47,7 @@
       align-items: center; 
       padding: 18px 20px; 
     }
+
     .logo { 
       font-size: 1.5rem; 
       font-weight: 700; 
@@ -53,13 +55,21 @@
       text-decoration: none; 
       letter-spacing: -0.5px;
     }
-    .nav-links { list-style: none; display: flex; gap: 24px; }
+
+    .nav-links { list-style: none;
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
     .nav-links a { 
       text-decoration: none; 
       color: var(--text-color); 
       font-weight: 600; 
       transition: color 0.2s;
+      align-items: center;
     }
+
     .nav-links a:hover, .nav-links a.active { 
       color: var(--accent-color); 
     }
@@ -294,6 +304,46 @@
       width: auto;
       display: block;
     }
+
+      /* BREADCRUMB STYLE */
+    .breadcrumb-container {
+      max-width: 1000px;
+      margin: 15px auto 0 auto;
+      padding: 0 20px;
+    }
+
+    .breadcrumb-inner {
+      font-size: 0.9rem;
+      color: var(--text-color);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb-inner a {
+      color: var(--text-color);
+      text-decoration: none;
+      opacity: 0.75;
+      transition: opacity 0.2s, color 0.2s;
+    }
+
+    .breadcrumb-inner a:hover {
+      opacity: 1;
+      color: var(--accent-color);
+      text-decoration: underline;
+    }
+
+    .breadcrumb-inner .separator {
+      opacity: 0.4;
+      font-size: 1rem;
+    }
+
+    .breadcrumb-inner .current {
+      font-weight: 600;
+      opacity: 1;
+    }
+
   </style>
 </head>
 <body>
@@ -320,6 +370,15 @@
       </ul>
     </nav>
   </header>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb-container" aria-label="Percorso di navigazione">
+    <div class="breadcrumb-inner">
+      <a href="index.html">Home</a>
+      <span class="separator">&rsaquo;</span>
+      <span class="current">Chi Sono</span>
+    </div>
+  </nav>
 
   <main class="container">
     <div class="card">

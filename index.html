@@ -304,6 +304,45 @@
         width: auto;
         display: block;
       }
+
+      /* BREADCRUMB STYLE */
+      .breadcrumb-container {
+        max-width: 1000px;
+        margin: 15px auto 0 auto;
+        padding: 0 20px;
+      }
+
+      .breadcrumb-inner {
+        font-size: 0.9rem;
+        color: var(--text-color);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .breadcrumb-inner a {
+        color: var(--text-color);
+        text-decoration: none;
+        opacity: 0.75;
+        transition: opacity 0.2s, color 0.2s;
+      }
+
+      .breadcrumb-inner a:hover {
+        opacity: 1;
+        color: var(--accent-color);
+        text-decoration: underline;
+      }
+
+      .breadcrumb-inner .separator {
+        opacity: 0.4;
+        font-size: 1rem;
+      }
+
+      .breadcrumb-inner .current {
+        font-weight: 600;
+        opacity: 1;
+      }
   </style>
 </head>
 <body>
@@ -331,6 +370,15 @@
       </ul>
     </nav>
   </header>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb-container" aria-label="Percorso di navigazione">
+    <div class="breadcrumb-inner">
+      <a href="index.html">Home</a>
+      <span class="separator">&rsaquo;</span>
+      <span class="current">Catalogo</span> 
+    </div>
+  </nav>
 
   <main class="container">
     

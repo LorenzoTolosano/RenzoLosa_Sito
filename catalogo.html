@@ -53,12 +53,19 @@
       text-decoration: none; 
       letter-spacing: -0.5px;
     }
-    .nav-links { list-style: none; display: flex; gap: 24px; }
+
+    .nav-links { list-style: none; 
+      display: flex; 
+      gap: 24px;
+      align-items: center;
+    }
+
     .nav-links a { 
       text-decoration: none; 
       color: var(--text-color); 
       font-weight: 600; 
       transition: color 0.2s;
+      align-items: center;
     }
     .nav-links a:hover, .nav-links a.active { 
       color: var(--accent-color); 
@@ -295,6 +302,45 @@
       display: block;
     }
     
+    /* BREADCRUMB STYLE */
+    .breadcrumb-container {
+      max-width: 1000px;
+      margin: 15px auto 0 auto;
+      padding: 0 20px;
+    }
+
+    .breadcrumb-inner {
+      font-size: 0.9rem;
+      color: var(--text-color);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb-inner a {
+      color: var(--text-color);
+      text-decoration: none;
+      opacity: 0.75;
+      transition: opacity 0.2s, color 0.2s;
+    }
+
+    .breadcrumb-inner a:hover {
+      opacity: 1;
+      color: var(--accent-color);
+      text-decoration: underline;
+    }
+
+    .breadcrumb-inner .separator {
+      opacity: 0.4;
+      font-size: 1rem;
+    }
+
+    .breadcrumb-inner .current {
+      font-weight: 600;
+      opacity: 1;
+    }
+
   </style>
 </head>
 <body>
@@ -322,6 +368,15 @@
     </nav>
   </header>
 
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb-container" aria-label="Percorso di navigazione">
+    <div class="breadcrumb-inner">
+      <a href="index.html">Home</a>
+      <span class="separator">&rsaquo;</span>
+      <span class="current">Catalogo</span>
+    </div>
+  </nav>
+
   <main class="container">
     <div class="page-title">
       <h1>Catalogo Creazioni</h1>
@@ -330,27 +385,51 @@
 
     <div class="catalog-grid">
       
-      <!-- Scheda Prodotto 1 -->
+      <!-- Bracciali -->
       <div class="product-card">
-        <div class="product-image">Foto Prodotto A</div>
+        <div class="product-image">Foto Bracciali</div>
         <div class="product-content">
           <div>
-            <h2 class="product-title">Articolo Tipologia A</h2>
+            <h2 class="product-title">Bracciali in Cuoio</h2>
             <p class="product-description">Descrizione del prodotto A, i materiali utilizzabili e le finiture disponibili.</p>
           </div>
-          <a href="ordina-prodotto-a.html" class="btn">Personalizza e Ordina</a>
+          <a href="ordina-prodotto-a.html" class="btn">Visualizza Prodotto</a>
         </div>
       </div>
 
-      <!-- Scheda Prodotto 2 -->
+      <!-- Cinture -->
       <div class="product-card">
-        <div class="product-image">Foto Prodotto B</div>
+        <div class="product-image">Foto Cinture</div>
         <div class="product-content">
           <div>
-            <h2 class="product-title">Articolo Tipologia B</h2>
+            <h2 class="product-title">Cinture in Cuoio</h2>
             <p class="product-description">Descrizione del prodotto B con le relative possibilità di personalizzazione.</p>
           </div>
-          <a href="ordina-prodotto-b.html" class="btn">Personalizza e Ordina</a>
+          <a href="ordina-prodotto-b.html" class="btn">Visualizza Prodotto</a>
+        </div>
+      </div>
+
+      <!-- Jeans -->
+      <div class="product-card">
+        <div class="product-image">Foto Jeans</div>
+        <div class="product-content">
+          <div>
+            <h2 class="product-title">Jeans</h2>
+            <p class="product-description">Descrizione del prodotto C con le relative possibilità di personalizzazione.</p>
+          </div>
+          <a href="ordina-prodotto-c.html" class="btn">Visualizza Prodotto</a>
+        </div>
+      </div>
+
+      <!-- Borse -->
+      <div class="product-card">
+        <div class="product-image">Foto Borse</div>
+        <div class="product-content">
+          <div>
+            <h2 class="product-title">Borse</h2>
+            <p class="product-description">Descrizione del prodotto D, i materiali utilizzabili e le finiture disponibili.</p>
+          </div>
+          <a href="ordina-prodotto-d.html" class="btn">Visualizza Prodotto</a>
         </div>
       </div>
 

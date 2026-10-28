@@ -359,6 +359,63 @@
       margin-top: 60px; 
       border-top: 1px solid rgba(77, 46, 31, 0.2); 
     }
+
+    /* BREADCRUMB STYLE */
+    .breadcrumb-container {
+      max-width: 1000px;
+      margin: 15px auto 0 auto;
+      padding: 0 20px;
+    }
+
+    .breadcrumb-inner {
+      font-size: 0.9rem;
+      color: var(--text-color);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb-inner a {
+      color: var(--text-color);
+      text-decoration: none;
+      opacity: 0.75;
+      transition: opacity 0.2s, color 0.2s;
+    }
+
+    .breadcrumb-inner a:hover {
+      opacity: 1;
+      color: var(--accent-color);
+      text-decoration: underline;
+    }
+
+    .breadcrumb-inner .separator {
+      opacity: 0.4;
+      font-size: 1rem;
+    }
+
+    .breadcrumb-inner .current {
+      font-weight: 600;
+      opacity: 1;
+    }
+
+    /* Stile per l'elenco puntato */
+    ul.custom-list {
+      list-style-type: square; /* Forma del punto: disc, circle, square */
+      margin: 15px 0 20px 25px; /* Spaziatura esterna */
+      padding-left: 0;
+    }
+
+    ul.custom-list li {
+      margin-bottom: 8px; /* Spazio tra una riga e l'altra */
+      color: var(--text-color);
+      font-size: 0.95rem;
+    }
+
+    /* Opzionale: colore personalizzato per i pallini */
+    ul.custom-list li::marker {
+      color: var(--secondary-color); /* Ocra (#E6A82E) o var(--accent-color) */
+    }
   </style>
 </head>
 <body>
@@ -387,11 +444,22 @@
     </nav>
   </header>
 
+  <!-- BREADCRUMB / PERCORSO DI NAVIGAZIONE -->
+  <nav class="breadcrumb-container" aria-label="Percorso di navigazione">
+    <div class="breadcrumb-inner">
+      <a href="index.html">Home</a>
+      <span class="separator">&rsaquo;</span>
+      <a href="catalogo.html">Catalogo</a>
+      <span class="separator">&rsaquo;</span>
+      <span class="current">Bracciale in Cuoio</span>
+    </div>
+  </nav>
+
   <main class="container">
 
     <!-- TITOLO PRODOTTO IN CIMA -->
     <div class="product-header">
-      <h1>Bracciale in Cuoio Artisanal</h1>
+      <h1>Bracciale in Cuoio</h1>
       <p class="subtitle">Cuoio a concia vegetale lavorato a mano e rifinito su misura</p>
     </div>
 
@@ -419,9 +487,7 @@
       <!-- PANEL CONFIGURATORE -->
       <div class="product-config-panel">
         
-        <p class="short-desc">
-          Realizzato in pregiato cuoio toscano tagliato e rifinito a mano. Un accessorio senza tempo, personalizzabile in colore, larghezza e taglia esatta.
-        </p>
+        
 
         <!-- CARD 1: COLORE -->
         <span class="config-label">1. Colore del Cuoio:</span>
@@ -436,6 +502,7 @@
           <span class="config-card-action">Cambia &rsaquo;</span>
         </div>
 
+
         <!-- CARD 2: ALTEZZA -->
         <span class="config-label">2. Altezza del Bracciale:</span>
         <div class="config-card" id="openHeightModal">
@@ -447,7 +514,9 @@
             </div>
           </div>
           <span class="config-card-action">Cambia &rsaquo;</span>
-        </div>
+        </div>    
+
+        
 
         <!-- CARD 3: TAGLIA -->
         <span class="config-label">3. Taglia (Circonferenza Polso):</span>
@@ -466,18 +535,31 @@
         <div class="action-box">
           <div class="price-display">
             <span class="price-label">Prezzo Totale:</span>
-            <span class="price-value" id="totalPrice">35 €</span>
+            <span class="price-value" id="totalPrice">4,70 €</span>
           </div>
 
           <button class="btn-add-cart" onclick="addToCart()">Aggiungi al Carrello 🛒</button>
         </div>
-
+          
       </div>
-
+      
     </div>
-
+    
     <!-- SEZIONE BASSAM: GUIDA ALLE TAGLIE E STORIA -->
     <section class="story-section">
+
+      <h2>Descrizione del Prodotto</h2>
+
+      <p>Realizzato interamente a mano da me su ordinazione, questo bracciale incarna l'essenza dell'artigianato consapevole. Realizzato con cuoio di prima scelta della conceria Walpier (Consorzio Vera Pelle Conciata al Vegetale), lavorato e rifinito a mano.</p>
+      <p><strong>Caratteristiche Principali:</strong></p>
+      <ul class="custom-list">
+        <li><strong>Pellame:</strong> Il Buttero è uno dei pellami più celebri e rappresentativi della conceria toscana Walpier, punto di riferimento mondiale per la concia al vegetale. Realizzato su spalle di bovino di primo fiore, si distingue per la sua finitura liscia, semi-opaca e incredibilmente naturale.</li>
+        <li><strong>Lavorazione:</strong> Progettazione, taglio e confezionamento interamente manuali.</li>
+        <li><strong>Sostenibilità:</strong> 100% materiali naturali e biodegradabili, zero componenti sintetiche.</li>
+        <li><strong>Durabilità:</strong> Pensato per resistere all'uso quotidiano e acquisire bellezza nel tempo.</li>
+      </ul>
+
+
       <h2>Guida alle Misure & Lavorazione</h2>
       <p>
         Per conoscere la tua taglia ideale, misura la circonferenza del polso con un metro da sarta facendolo aderire senza stringere troppo. Se sei a cavallo tra due misure, ti consigliamo la taglia superiore.
@@ -539,25 +621,25 @@
         <button class="modal-close" onclick="closeModal('heightModal')">&times;</button>
       </div>
       <div class="option-grid">
-        <div class="option-item" onclick="selectHeight('2 cm', 0, 'altezza-2cm.jpg', 'Misura standard')">
+        <div class="option-item" onclick="selectHeight('2 cm', 4.70, 'altezza-2cm.jpg', '4,70 €')">
           <img src="altezza-2cm.jpg" alt="2 cm">
           <span class="option-title">2 cm</span>
-          <span class="option-price">Base</span>
+          <span class="option-price">4,70 €</span>
         </div>
-        <div class="option-item" onclick="selectHeight('2,5 cm', 2, 'altezza-25cm.jpg', '+2 €')">
+        <div class="option-item" onclick="selectHeight('2,5 cm', 5.50, 'altezza-25cm.jpg', '5,50 €')">
           <img src="altezza-25cm.jpg" alt="2,5 cm">
           <span class="option-title">2,5 cm</span>
-          <span class="option-price">+2 €</span>
+          <span class="option-price">5,50 €</span>
         </div>
-        <div class="option-item" onclick="selectHeight('3 cm', 4, 'altezza-3cm.jpg', '+4 €')">
+        <div class="option-item" onclick="selectHeight('3 cm', 6.30, 'altezza-3cm.jpg', '6,30 €')">
           <img src="altezza-3cm.jpg" alt="3 cm">
           <span class="option-title">3 cm</span>
-          <span class="option-price">+4 €</span>
+          <span class="option-price">6,30 €</span>
         </div>
-        <div class="option-item" onclick="selectHeight('3,5 cm', 6, 'altezza-35cm.jpg', '+6 €')">
+        <div class="option-item" onclick="selectHeight('3,5 cm', 7.00, 'altezza-35cm.jpg', '7,00 €')">
           <img src="altezza-35cm.jpg" alt="3,5 cm">
           <span class="option-title">3,5 cm</span>
-          <span class="option-price">+6 €</span>
+          <span class="option-price">7,00 €</span>
         </div>
       </div>
     </div>
@@ -673,9 +755,9 @@
     }
 
     // BASE DI PREZZO & SELEZIONI CORRENTI
-    const basePrice = 35;
+    const basePrice = 0;
     let selectedColor = { title: 'Oliva', extraPrice: 0, img: 'colore-oliva.jpg' };
-    let selectedHeight = { title: '2 cm', extraPrice: 0, img: 'altezza-2cm.jpg' };
+    let selectedHeight = { title: '2 cm', extraPrice: 4.60, img: 'altezza-2cm.jpg' };
     let selectedSize = { title: 'M - 16,5 cm', extraPrice: 0, img: 'guida-taglie.jpg' };
 
     function selectColor(title, extra, img, subText) {
@@ -706,7 +788,7 @@
 
     function updatePrice() {
       let total = basePrice + selectedColor.extraPrice + selectedHeight.extraPrice + selectedSize.extraPrice;
-      document.getElementById('totalPrice').innerText = total + " €";
+      document.getElementById('totalPrice').innerText = total.toFixed(2) + " €";
       return total;
     }
 
